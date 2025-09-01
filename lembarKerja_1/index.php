@@ -1,3 +1,12 @@
+<?php
+    require_once("koneksidb.php");
+
+    $sql_query = "SELECT * FROM tb_mahasiswa";
+    $sql = mysqli_query($koneksidb, $sql_query);
+    $totaldata = mysqli_num_rows($sql);
+    $data = mysqli_fetch_assoc($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +68,18 @@
             <td>Samsuddin</td>
             <td>-</td>
         </tr>
+        <tr>
+            <td>5</td>
+            <td><?php echo $data["NoInduk"]; ?></td>
+            <td><?php echo $data["Nama"]; ?></td>
+            <td><?php echo $data["Jk"]; ?></td>
+            <td><?php echo $data["TglLahir"]; ?></td>
+            <td><?php echo $data["Alamat"]; ?></td>
+            <td><?php echo $data["Dosen"]; ?></td>
+            <td><?php echo $data["Telp"]; ?></td>
+        </tr>
     </table>
     <br>
-    <a href="add.html">Add Data</a>
+    <a href="add.php">Add Data</a>
 </body>
 </html>
