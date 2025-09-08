@@ -68,16 +68,24 @@
             <td>Samsuddin</td>
             <td>-</td>
         </tr>
+        <?php do {
+            $id = 4;
+            if ($totaldata == 0) {
+                echo "Data Kosong";
+        } else { ?>
         <tr>
-            <td>5</td>
+            <td><?php for($i = 0; $i <= $id; $i++) $id = $i ?></td>
             <td><?php echo $data["NoInduk"]; ?></td>
             <td><?php echo $data["Nama"]; ?></td>
             <td><?php echo $data["Jk"]; ?></td>
             <td><?php echo $data["TglLahir"]; ?></td>
             <td><?php echo $data["Alamat"]; ?></td>
             <td><?php echo $data["Dosen"]; ?></td>
-            <td><?php echo $data["Telp"]; ?></td>
+            <td><?php echo $data["Telp"] ?></td>
         </tr>
+        <?php }
+        } while ($data = mysqli_fetch_assoc($sql));
+        ?>
     </table>
     <br>
     <a href="add.php">Add Data</a>

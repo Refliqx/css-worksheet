@@ -168,7 +168,7 @@ textarea {
 textarea:focus {
     background-color: #fff;
 }
-input[type=submit] {
+form button {
     background-color: #34495e;
     height: 25px;
     width: 49%;
